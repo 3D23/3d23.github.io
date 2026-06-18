@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machinist & Assistant | 3D23</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/project-page.css">
+    <style>
+        .dual-video {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .dual-video video {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0;
+        }
+        .dual-video-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .dual-video {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-page">
+        <a href="../index.html" class="back-btn">← Назад</a>
+        <h1>Machinist & Assistant</h1>
+        <p class="role">Gameplay Developer</p>
+        
+        <video autoplay loop muted playsinline controls>
+            <source src="../assets/video/machinistAssistant.mp4" type="video/mp4">
+        </video>
+        
+        <h2>Джойстики</h2>
+        <div class="dual-video">
+            <div>
+                <p class="dual-video-label">Джойстик машиниста</p>
+                <video autoplay loop muted playsinline controls>
+                    <source src="../assets/video/machinist-joystick.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div>
+                <p class="dual-video-label">Джойстик ассистента</p>
+                <video autoplay loop muted playsinline controls>
+                    <source src="../assets/video/assistant-joystick.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <h2>Об игре</h2>
+        <p>Игра, в которой тебе с другом придется попробовать себя в роли машиниста и его ассистента. Постарайтесь вовремя успевать на станции чтобы ваш поезд не разгромили разгневанные пассажиры.</p>
+        
+        <h2>Моя роль</h2>
+
+        <p><b>Движение поезда</b><br>
+        Реализовал механику управления поездом через пульт машиниста — доступ к нему есть только у игрока в роли машиниста. Поезд плавно отзывается на ввод, скорость регулируется переключением передач на пульте. Динамика движения напрямую зависит от технического состояния поезда: чем больше поломок, тем хуже управляемость и максимальная скорость.</p>
+
+        <p><b>Система заданий</b><br>
+        Разработал модульную систему заданий с поддержкой последовательных цепочек: вовремя прибыть на станцию, доставить пассажиров в целости. Сложность и разнообразие заданий растут с прогрессом, заставляя координироваться с напарником всё плотнее.</p>
+
+        <p><b>Система поломок и починки</b><br>
+        Спроектировал систему поломок и починки поезда: отказ двигателя, короткое замыкание и другие неисправности. Для каждой поломки предусмотрена уникальная мини-игра — например, соединить провода от правильного входа к правильному выходу. Починкой занимается ассистент, но правильные входы и выходы видит только машинист на своём экране. Взаимодействие построено через веб-интерфейс: игроки используют джойстики на телефоне, внутри которых запускаются мини-игры, написанные на Defold. Связь между джойстиками и игрой реализована через WebSocket, что обеспечивает минимальную задержку и синхронизацию в реальном времени.</p>
+        
+        <p><b>UI на UI Toolkit</b><br>
+        Полностью реализовал интерфейс — от главного меню до HUD — на UI Toolkit с адаптивной вёрсткой. UI вынесен в отдельный слой и общается с игровой логикой через события, что позволило гибко дорабатывать интерфейс, не затрагивая основной код.</p>
+
+        <p><b>ECS архитектура</b><br>
+        Игровая логика построена на ECS: сущности (поезд, вагоны, пассажиры, поломки) разбиты на независимые компоненты, а системы обрабатывают их изолированно. Это обеспечило высокую производительность и удобство расширения — новые механики добавляются без переписывания существующих систем.</p>
+        
+        <div class="tech-tags">
+            <span class="tech-tag">Unity, Defold</span>
+            <span class="tech-tag">C#, Lua</span>
+            <span class="tech-tag">Мультиплеер</span>
+            <span class="tech-tag">ECS</span>
+            <span class="tech-tag">Прототип</span>
+            <span class="tech-tag">WebSocket</span>
+            <span class="tech-tag">JSON</span>
+            <span class="tech-tag">Universal Renderer Pipeline (URP)</span>
+        </div>
+    </div>    
+</body>
+</html>

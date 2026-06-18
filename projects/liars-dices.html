@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liar's Dices | 3D23</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/project-page.css">
+    <style>
+        .combinations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            color: #ccc;
+            font-size: 0.85rem;
+        }
+        .combinations-table th {
+            text-align: left;
+            padding: 0.75rem 0.6rem;
+            border-bottom: 1px solid #333;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+        .combinations-table th:nth-child(n+4) {
+            text-align: center;
+        }
+        .combinations-table td {
+            padding: 0.5rem 0.6rem;
+            border-bottom: 1px solid #1a1a1a;
+            vertical-align: top;
+        }
+        .combinations-table td:nth-child(n+4) {
+            text-align: center;
+        }
+        .combinations-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .combinations-table .section-row td {
+            color: #EE9B00;
+            text-align: center;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+            font-weight: 700;
+            padding-top: 1rem;
+            border-bottom: 1px solid #333;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .rules-list {
+            color: #999;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .rules-list li {
+            margin-bottom: 0.4rem;
+        }
+        .desc-cell {
+            font-size: 0.8rem;
+            color: #999;
+            line-height: 1.4;
+        }
+        .prob-cell {
+            text-align: center;
+            font-weight: 600;
+            color: #ccc;
+        }
+        .github-links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .github-link-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 0.9rem;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #999;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .github-link-item:hover {
+            border-color: #EE9B00;
+            color: #EE9B00;
+        }
+        .github-link-item img {
+            filter: brightness(0) saturate(100%) invert(55%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+            transition: filter 0.3s;
+            flex-shrink: 0;
+        }
+        .github-link-item:hover img {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        }
+        .fsm-image {
+            width: 70%;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto 2rem;
+            border-radius: 8px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-page">
+        <a href="../index.html" class="back-btn">← Назад</a>
+        <h1>Liar's Dices</h1>
+        <p class="role">Solo Developer</p>
+        
+        <video autoplay loop muted playsinline controls>
+            <source src="../assets/video/dices.mp4" type="video/mp4">
+        </video>
+        
+        <h2>Об игре</h2>
+        <p>Тактическая дуэль на костях, вдохновлённая механикой из <b>Kingdom Come: Deliverance</b>. Каждая кость — оружие с уникальной вероятностью выпадения граней. Просчитывай ходы наперёд, собирай комбинации и перехитри соперника.</p>
+        
+        <p><b>Общие правила:</b></p>
+        <ul class="rules-list">
+            <li>Играют 2 игрока</li>
+            <li>У каждого игрока 6 костей</li>
+            <li>Партия ведётся до набора необходимого количества очков</li>
+        </ul>
+
+        <p><b>Правила игры:</b></p>
+        <p>Игрок начинает первым и бросает все шесть костей, затем откладывает выигрышные комбинации. Оставшиеся кости можно перебросить или передать ход сопернику. Выигрышные очки записываются на счёт при завершении хода.</p>
+        <p>Важно: если после броска костей вы не смогли ничего отложить, то набранные очки за раунд сгорают, а ход переходит к сопернику. Также, если в результате бросков вы сумели отложить все оставшиеся у вас кости, то можете перебросить все шесть костей ещё раз и продолжить свой ход.</p>
+
+        <h2>Комбинации и очки</h2>
+        <table class="combinations-table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Комбинация</th>
+                    <th>Очки</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="section-row"><td colspan="3">Одиночные</td></tr>
+                <tr><td>1</td><td>Одна единица</td><td>100</td></tr>
+                <tr><td>2</td><td>Одна пятёрка</td><td>50</td></tr>
+                <tr class="section-row"><td colspan="3">Тройки</td></tr>
+                <tr><td>3</td><td>Три единицы</td><td>1000</td></tr>
+                <tr><td>4</td><td>Три двойки</td><td>200</td></tr>
+                <tr><td>5</td><td>Три тройки</td><td>300</td></tr>
+                <tr><td>6</td><td>Три четвёрки</td><td>400</td></tr>
+                <tr><td>7</td><td>Три пятёрки</td><td>500</td></tr>
+                <tr><td>8</td><td>Три шестёрки</td><td>600</td></tr>
+                <tr class="section-row"><td colspan="3">Увеличение (доп. кость ×2)</td></tr>
+                <tr><td>9</td><td>Четыре тройки</td><td>400</td></tr>
+                <tr><td>10</td><td>Пять троек</td><td>800</td></tr>
+                <tr><td>11</td><td>Шесть троек</td><td>1600</td></tr>
+                <tr class="section-row"><td colspan="3">Универсальные</td></tr>
+                <tr><td>12</td><td>Три пары (1+1, 2+2, 4+4 и т.п.)</td><td>500</td></tr>
+                <tr><td>13</td><td>Пять подряд (1–5 или 2–6)</td><td>750</td></tr>
+                <tr><td>14</td><td>Шесть подряд</td><td>1500</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Виды костей</h2>
+        <p>В игре представлены 8 уникальных костей с разной вероятностью выпадения граней — от честных до шулерских. Выбирай кости с умом: каждая влияет на тактику и шансы собрать выигрышную комбинацию.</p>
+        <table class="combinations-table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Игральная кость</td>
+                    <td class="desc-cell">Очень хорошо сделанная игральная кость.</td>
+                    <td class="prob-cell">16%</td>
+                    <td class="prob-cell">16%</td>
+                    <td class="prob-cell">16%</td>
+                    <td class="prob-cell">16%</td>
+                    <td class="prob-cell">16%</td>
+                    <td class="prob-cell">16%</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Обычная игральная кость</td>
+                    <td class="desc-cell">Одна из немногих качественно сделанных шулерских игральных костей, дающих преимущество в игре своему хозяину.</td>
+                    <td class="prob-cell">22%</td>
+                    <td class="prob-cell">11%</td>
+                    <td class="prob-cell">11%</td>
+                    <td class="prob-cell">11%</td>
+                    <td class="prob-cell">11%</td>
+                    <td class="prob-cell">33%</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Плохая игральная кость</td>
+                    <td class="desc-cell">Иногда кости падают хорошо, иногда — нет. Эта, как правило — нет.</td>
+                    <td class="prob-cell">28%</td>
+                    <td class="prob-cell">20%</td>
+                    <td class="prob-cell">40%</td>
+                    <td class="prob-cell">4%</td>
+                    <td class="prob-cell">4%</td>
+                    <td class="prob-cell">4%</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Невезучая игральная кость</td>
+                    <td class="desc-cell">Игральная кость, которую лучше убрать как можно дальше.</td>
+                    <td class="prob-cell">4%</td>
+                    <td class="prob-cell">22%</td>
+                    <td class="prob-cell">22%</td>
+                    <td class="prob-cell">22%</td>
+                    <td class="prob-cell">22%</td>
+                    <td class="prob-cell">4%</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Игральная кость для нечётных чисел</td>
+                    <td class="desc-cell">Шулерская игральная кость, на которой чаще выпадают нечётные числа.</td>
+                    <td class="prob-cell">30%</td>
+                    <td class="prob-cell">3%</td>
+                    <td class="prob-cell">30%</td>
+                    <td class="prob-cell">3%</td>
+                    <td class="prob-cell">30%</td>
+                    <td class="prob-cell">3%</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Игральная кость для чётных чисел</td>
+                    <td class="desc-cell">Шулерская игральная кость, на которой чаще выпадают чётные числа.</td>
+                    <td class="prob-cell">3%</td>
+                    <td class="prob-cell">30%</td>
+                    <td class="prob-cell">3%</td>
+                    <td class="prob-cell">30%</td>
+                    <td class="prob-cell">3%</td>
+                    <td class="prob-cell">30%</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Счастливая игральная кость</td>
+                    <td class="desc-cell">Если тебе улыбнулась удача, улыбнитесь ей в ответ. Иначе всё это будет выглядеть подозрительно.</td>
+                    <td class="prob-cell">22%</td>
+                    <td class="prob-cell">0%</td>
+                    <td class="prob-cell">11%</td>
+                    <td class="prob-cell">11%</td>
+                    <td class="prob-cell">11%</td>
+                    <td class="prob-cell">44%</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Сбалансированная игральная кость</td>
+                    <td class="desc-cell">В её гранях только случай. Никто не знает, на чьей стороне окажется удача.</td>
+                    <td class="prob-cell">33%</td>
+                    <td class="prob-cell">0%</td>
+                    <td class="prob-cell">0%</td>
+                    <td class="prob-cell">0%</td>
+                    <td class="prob-cell">33%</td>
+                    <td class="prob-cell">33%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Стейт-машина фаз игры (FSM)</h2>
+        <img src="../assets/images/dices-fsm.svg" alt="Схема FSM" class="fsm-image" onerror="this.style.display='none'">
+
+        <h2>Моя роль</h2>
+        <p>Полный цикл разработки в одиночку. Реализовал механику броска костей с системой вероятностей, систему комбинаций и AI-противника.</p>
+
+        <h2 style="color: #EE9B00; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; margin-top: 1.5rem; padding-bottom: 0.5rem; display: inline-block;">Ссылки на код</h2>
+        <div class="github-links-grid">
+            <a href="https://github.com/3D23/Cubes/tree/master/Assets/Scripts/Combinations" target="_blank" rel="noopener noreferrer" class="github-link-item">
+                <img src="../assets/images/github-icon.svg" alt="" width="14" height="14">
+                Комбинации
+            </a>
+            <a href="https://github.com/3D23/Cubes/tree/master/Assets/Scripts/Configs" target="_blank" rel="noopener noreferrer" class="github-link-item">
+                <img src="../assets/images/github-icon.svg" alt="" width="14" height="14">
+                Конфигурации
+            </a>
+            <a href="https://github.com/3D23/Cubes/tree/master/Assets/Scripts/GameLoopStateMachine" target="_blank" rel="noopener noreferrer" class="github-link-item">
+                <img src="../assets/images/github-icon.svg" alt="" width="14" height="14">
+                Стейт-машина фаз игры (FSM)
+            </a>
+            <a href="https://github.com/3D23/Cubes/blob/master/Assets/Scripts/GameEvents.cs" target="_blank" rel="noopener noreferrer" class="github-link-item">
+                <img src="../assets/images/github-icon.svg" alt="" width="14" height="14">
+                Game Events
+            </a>
+            <a href="https://github.com/3D23/Cubes/blob/master/Assets/Scripts/Managers/GameLoopEventBus.cs" target="_blank" rel="noopener noreferrer" class="github-link-item">
+                <img src="../assets/images/github-icon.svg" alt="" width="14" height="14">
+                Event Bus
+            </a>
+            <a href="https://github.com/3D23/Cubes/blob/master/Assets/Scripts/Managers/GameServiceLocator.cs" target="_blank" rel="noopener noreferrer" class="github-link-item">
+                <img src="../assets/images/github-icon.svg" alt="" width="14" height="14">
+                Service Locator
+            </a>
+            <a href="https://github.com/3D23/Cubes" target="_blank" rel="noopener noreferrer" class="github-link-item">
+                <img src="../assets/images/github-icon.svg" alt="" width="14" height="14">
+                Исходный код проекта
+            </a>
+        </div>
+        
+        <div class="tech-tags">
+            <span class="tech-tag">Unity</span>
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">ООП</span>
+            <span class="tech-tag">Прототип</span>
+            <span class="tech-tag">Scriptable Object</span>
+            <span class="tech-tag">JSON</span>
+            <span class="tech-tag">Event Base Архитектра</span>
+            <span class="tech-tag">UniTask</span>
+        </div>
+    </div>
+</body>
+</html>

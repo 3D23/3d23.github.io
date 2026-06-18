@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>3D23 | Game Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">3D23</a>
+            <ul class="nav-links">
+                <li><a href="#work">Проекты</a></li>
+                <li><a href="#extra">Ещё</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Gameplay Developer</p>
+                <h1><b>3D</b><span>23</span></h1>
+                <p>Разрабатываю игровые механики, прототипирую геймплей и собираю всё в единое целое.</p>
+            </div>
+        </section>
+
+        <section id="work">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 2rem; position: relative; z-index: 1; text-align: center;">
+                <p class="section-label reveal" style="font-size: 2rem; letter-spacing: 5px;">Проекты</p>
+            </div>
+
+            <div class="project-fullscreen reveal">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/video/machinistAssistant.mp4" type="video/mp4">
+                </video>
+                <div class="project-overlay">
+                    <div class="project-overlay-content">
+                        <h2 class="project-title">Machinist & Assistant</h2>
+                        <p class="project-role">Gameplay Developer</p>
+                        <p class="project-desc">Игра, в которой тебе с другом придется попробовать себя в роли машиниста и его ассистента. Постарайтесь вовремя успевать на станции чтобы ваш поезд не разгромили разгневанные пассажиры.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity, Defold</span>
+                            <span class="tech-tag">URP</span>
+                            <span class="tech-tag">C#, Lua</span>
+                            <span class="tech-tag">Мультиплеер</span>
+                            <span class="tech-tag">ECS</span>
+                            <span class="tech-tag">Прототип</span>
+                        </div>
+                    </div>
+                    <a href="projects/machinist-assistant.html" class="video-detail-btn project-link">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="project-fullscreen reveal">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/video/dices.mp4" type="video/mp4">
+                </video>
+                <div class="project-overlay">
+                    <div class="project-overlay-content">
+                        <h2 class="project-title">Liar's Dices</h2>
+                        <p class="project-role">Solo Developer</p>
+                        <p class="project-desc">Тактическая дуэль на костях, вдохновлённая механикой из <b>Kingdom Come: Deliverance</b>. Каждая кость — оружие с уникальной вероятностью выпадения граней.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">ООП</span>
+                            <span class="tech-tag">Прототип</span>
+                        </div>
+                    </div>
+                    <a href="projects/liars-dices.html" class="video-detail-btn project-link">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="project-fullscreen reveal">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/video/warehouse.mp4" type="video/mp4">
+                </video>
+                <div class="project-overlay">
+                    <div class="project-overlay-content">
+                        <h2 class="project-title">Warehouse</h2>
+                        <p class="project-role">Gameplay Developer</p>
+                        <p class="project-desc">Мой первый опыт в движке Unity. Игра, в которой тебе надо правильно снарядить поезда грузом. Сортируй грузы по цветам и получай деньги, чтобы улучшать свой склад.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">ООП</span>
+                            <span class="tech-tag">Прототип</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-fullscreen reveal">
+                <img src="assets/images/dhg_preview.svg" alt="???" class="project-preview-image" onerror="this.style.display='none'">
+                <div class="project-overlay" style="background: rgba(0, 0, 0, 0);">
+                    <div class="project-no-video">
+                        <span>НЕОПОЗНАНО</span>
+                    </div>
+                    <div class="project-overlay-content">
+                        <h2 class="project-title">???</h2>
+                        <p class="project-role">Gameplay Developer, Tech Artist</p>
+                        <p class="project-role">В разработке</p>
+                        <p class="project-desc">Rougelite в ретро-футуристичном сеттинге: рефлексы человека против цифрового разума. Уворачивайся от волн роботов-убийц, тащи всё что не приварено, играй в тетрис с лутом прямо в кузове, и когда башня начинает дымиться — вот тут-то и начинается самое жёсткое: бежать с добычей или жадничать ещё чуть-чуть, рискуя потерять ВСЁ, потому что следующая волна уже идёт, а топлива на краю!</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">URP</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">ECS</span>
+                            <span class="tech-tag">ООП</span>
+                            <span class="tech-tag">Action Roguelite</span>
+                            <span class="tech-tag">Bullet Heaven</span>
+                            <span class="tech-tag">Extraction Shooter</span>
+                            <span class="tech-tag">Tactical Wave Combat</span>
+                            <span class="tech-tag">Inventory Management Puzzle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="extra" style="padding: 6rem 2rem 3rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+            <p class="section-label reveal">Дополнительно</p>
+            <p class="reveal delay-1" style="color: #999; font-size: 1.05rem; line-height: 1.7; max-width: 800px; margin-bottom: 1.5rem;">
+                Помимо основных проектов, реализовывал простые игровые механики и микро-проекты:
+            </p>
+            <div class="extra-list reveal delay-2">
+                <div class="extra-row">
+                    <div class="extra-item extra-expandable" onclick="this.classList.toggle('open')">
+                        <span class="extra-bullet"></span>
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span class="extra-title">Система меток на карте</span>
+                                    <span class="extra-desc"> — простое динамическое обновление и сохранение меток на карте.</span>
+                                </div>
+                                <span class="extra-arrow">▾</span>
+                            </div>
+                            <div class="extra-expand-content">
+                                <video autoplay loop muted playsinline style="width: 100%; border-radius: 6px; margin-top: 1rem;">
+                                    <source src="assets/video/map.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra-links">
+                        <a href="https://github.com/3D23/ALMA/tree/master/Assets/Scripts/Save" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Система сохранения</span>
+                        </a>
+                        <a href="https://github.com/3D23/ALMA/tree/master/Assets/Scripts/Common" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Карта и метки</span>
+                        </a>
+                        <a href="https://github.com/3D23/ALMA/tree/master" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Исходный код</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-row">
+                    <div class="extra-item extra-expandable" onclick="this.classList.toggle('open')">
+                        <span class="extra-bullet"></span>
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span class="extra-title">Механика погони</span>
+                                    <span class="extra-desc"> — в духе инди-хорроров, визуально напоминающий <b>Fears To Fathom</b>.</span>
+                                </div>
+                                <span class="extra-arrow">▾</span>
+                            </div>
+                            <div class="extra-expand-content" style="position: relative;">
+                                <video autoplay loop muted playsinline style="width: 100%; border-radius: 6px; margin-top: 1rem;" id="horror-video">
+                                    <source src="assets/video/horror.mp4" type="video/mp4">
+                                </video>
+                                <button class="video-sound-btn" onclick="event.stopPropagation(); toggleSound('horror-video', this)" title="Включить звук">🔇</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra-links">
+                        <a href="https://github.com/3D23/HorrorPrototype/blob/master/Assets/Scripts/DialogueData.cs" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Реализация диалогов</span>
+                        </a>
+                        <a href="https://github.com/3D23/HorrorPrototype/tree/master/Assets/Scripts/GameScenario" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Сценарии</span>
+                        </a>
+                        <a href="https://github.com/3D23/HorrorPrototype/tree/master" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Исходный код</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-row">
+                    <div class="extra-item extra-expandable" onclick="this.classList.toggle('open')">
+                        <span class="extra-bullet"></span>
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span class="extra-title">Механика производства и сбора ресурсов.</span>
+                                </div>
+                                <span class="extra-arrow">▾</span>
+                            </div>
+                            <div class="extra-expand-content">
+                                <video autoplay loop muted playsinline style="width: 100%; border-radius: 6px; margin-top: 1rem;">
+                                    <source src="assets/video/collectResources.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra-links">
+                        <a href="https://github.com/3D23/CollectResources/tree/master/Assets/Scripts/ResFactory" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Фабрики ресурсов</span>
+                        </a>
+                        <a href="https://github.com/3D23/CollectResources/tree/master/Assets/Scripts/Res" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Ресурсы</span>
+                        </a>
+                        <a href="https://github.com/3D23/CollectResources/tree/master/Assets/Scripts/Command" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Команды от игрока</span>
+                        </a>
+                        <a href="https://github.com/3D23/CollectResources/tree/master/Assets/Scripts/Saving" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Система сохранения ресурсов</span>
+                        </a>
+                        <a href="https://github.com/3D23/CollectResources/tree/master" target="_blank" rel="noopener noreferrer" class="extra-github-link">
+                            <img src="assets/images/github-icon.svg" alt="" width="14" height="14">
+                            <span>Исходный код</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+            <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        </div>
+
+        <section id="about">
+            <p class="section-label reveal">Обо мне</p>
+             <div class="about-grid">
+                <div class="about-text">
+                    <p class="reveal delay-1">Привет, я <span class="highlight">Дмитрий Дмитриченков (3D23)</span> — геймдев-разработчик. Специализируюсь на создании игровых механик.</p>
+                    <p class="reveal delay-2">Люблю сложные задачи, чистую архитектуру и когда всё работает без багов. Я убежден, что игровой код не имеет права быть «грязным», потому что скорость итераций в геймдеве бешеная, и расплата за хаос наступает мгновенно. Мои принципы — слабая связанность, расширяемость и читаемость. Я активно применяю паттерны проектирования (ECS, стейт-машины, сервис-локаторы там, где уместно), пишу модульные тесты для критически важных систем и стараюсь, чтобы через полгода в моём коде мог разобраться кто угодно, а не только я.</p>
+                    <p class="reveal delay-3">Я хочу, чтобы всё работало не просто «без багов», а было надежно и устойчиво к будущим изменениям.</p>
+                    <p class="reveal delay-4">Я нахожусь в поиске проектов, где могу принести максимальную пользу — будь то штатная позиция в крутой студии или долгосрочный фриланс-контракт.</p>
+                </div>
+                <div class="about-photo-wrapper reveal delay-1">
+                    <img src="assets/images/my.jpg" alt="Дмитрий Дмитриченков" class="about-photo" onerror="this.style.display='none'">
+                    <div class="stats" style="margin-top: 2rem;">
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Лет опыта</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-section reveal">
+                <p class="section-label" style="margin-top: 4rem; margin-bottom: 1.5rem;">Hard Skills</p>
+                <div class="skills-tags">
+                    <span class="skill-tag unity-tag">Unity</span>
+                    <span class="skill-tag unity-tag">URP</span>
+                    <span class="skill-tag unity-tag">UI Toolkit</span>
+                    <span class="skill-tag unity-tag">Timeline</span>
+                    <span class="skill-tag unity-tag">Animator</span>
+                    <span class="skill-tag unity-tag">Playables API</span>
+                    <span class="skill-tag unity-tag">Cinemachine</span>
+                    <span class="skill-tag unity-tag">Unity Input System</span>
+                    <span class="skill-tag unity-tag">Unity Localization</span>
+                    <span class="skill-tag unity-tag">Addressables</span>
+                    <span class="skill-tag unity-tag">Scriptable Object</span>
+                    <span class="skill-tag unity-tag">Unity Physics</span>
+                    <span class="skill-tag unity-tag">Morpeh ECS</span>
+                    <span class="skill-tag unity-tag">Entitas ECS</span>
+                    <span class="skill-tag unity-tag">VContainer</span>
+                    <span class="skill-tag unity-tag">UniRx</span>
+                    <span class="skill-tag unity-tag">UniTask</span>
+                    <span class="skill-tag unity-tag">DoTween</span>
+                    <span class="skill-tag unity-tag">Unity Test Runner</span>
+
+                    <span class="skill-tag artist-tag">VFXGraph</span>
+                    <span class="skill-tag artist-tag">ShaderGraph</span>
+                    <span class="skill-tag artist-tag">HLSL</span>
+                    <span class="skill-tag artist-tag">Blender 3D</span>
+                    <span class="skill-tag artist-tag">Krita</span>
+                    <span class="skill-tag artist-tag">Figma</span>
+
+                    <span class="skill-tag dev-tag">C#</span>
+                    <span class="skill-tag dev-tag">ECS</span>
+                    <span class="skill-tag dev-tag">ООП</span>
+                    <span class="skill-tag dev-tag">SOLID</span>
+                    <span class="skill-tag dev-tag">DI</span>
+                    <span class="skill-tag dev-tag">Архитектурные паттерны</span>
+                    <span class="skill-tag dev-tag">Алгоритмы и структуры данных</span>
+                    <span class="skill-tag dev-tag">Асинхронное программирование</span>
+                    <span class="skill-tag dev-tag">Git</span>
+                    <span class="skill-tag dev-tag">CI/CD</span>
+                    <span class="skill-tag dev-tag">Тестирование</span>
+                    <span class="skill-tag dev-tag">AI</span>
+                    <span class="skill-tag dev-tag">WebSocket</span>
+                    <span class="skill-tag dev-tag">REST API</span>
+                    <span class="skill-tag dev-tag">JSON</span>
+
+                    <span class="skill-tag general-tag">Линейная алгебра</span>
+                    <span class="skill-tag general-tag">Математический анализ</span>
+                    <span class="skill-tag general-tag">Дискретная математика</span>
+                    <span class="skill-tag general-tag">Теория вероятностей</span>
+                    <span class="skill-tag general-tag">Физическая механика</span>
+                </div>
+            </div>
+
+            <div class="tab-section reveal">
+                <p class="section-label" style="margin-top: 4rem; margin-bottom: 1.5rem;">Опыт работы</p>
+                
+                <div class="tab-companies">
+                    <button class="tab-company-btn active" data-tab="ocrv-job" style="--accent: #ed202e;" onclick="switchTab('ocrv-job', this)">
+                        <img src="assets/images/logo/job/ocrv_logo.svg" alt="OCRV" class="tab-company-logo" onerror="this.style.display='none'">
+                    </button>
+                    <button class="tab-company-btn" data-tab="dhg-job" style="--accent: #cccccc;" onclick="switchTab('dhg-job', this)">
+                        <img src="assets/images/logo/job/dhg_logo.svg" alt="???" class="tab-company-logo" onerror="this.style.display='none'">
+                    </button>
+                </div>
+
+                <div class="tab-details">
+                    <div class="tab-detail active" data-tab="ocrv-job" style="--accent: #ed202e;">
+                        <div class="tab-inner">
+                            <div class="tab-header">
+                                <img src="assets/images/logo/job/ocrv_logo.svg" alt="OCRV" class="tab-header-logo" onerror="this.style.display='none'">
+                                <div>
+                                    <h3 class="tab-company-name">ООО «Отраслевой центр разработки и внедрения информационных систем» — дочерняя компания ОАО «РЖД»</h3>
+                                    <p class="tab-company-subname">ОЦРВ</p>
+                                </div>
+                            </div>
+                            <p class="tab-role">Младший специалист 3 категории</p>
+                            <p class="tab-department">Лаборатория виртуальной реальности. Группа игровых технологий.</p>
+                            <p>Июль 2023 — Октябрь 2025 (2 года и 4 месяца)</p>
+                            
+                            <p style="margin-top: 1.2rem; font-weight: 600; color: #ccc;">Обязанности:</p>
+                            <ul class="tab-duties">
+                                <li>Разработка 2D и 3D-игр на движке Unity</li>
+                                <li>Формализация и алгоритмизация поставленных задач</li>
+                                <li>Реализация функциональности и логики программы в соответствии с ТЗ</li>
+                                <li>Разработка компьютерных, мобильных, а также web-игр</li>
+                                <li>Рефакторинг программного кода</li>
+                                <li>Разработка игр на движке Defold</li>
+                                <li>Написание юнит-тестов для игр</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-detail" data-tab="dhg-job" style="--accent: #cccccc;">
+                        <div class="tab-inner">
+                            <div class="tab-header">
+                                <img src="assets/images/logo/job/dhg_logo.svg" alt="???" class="tab-header-logo" onerror="this.style.display='none'">
+                                <div>
+                                    <p>Маленькая команда мечтателей, объединённых общей целью — создать ту самую игру, в которую мы сами хотим играть, и которая будет любимой для вас. Проект уже живёт, дышит и растёт каждый день.</p>
+                                </div>
+                            </div>
+                            <p class="tab-role">Gameplay Developer, Tech Artist</p>
+                            <p>Февраль 2025 - н.в.</p>
+                            <p style="margin-top: 1.2rem; font-weight: 600; color: #ccc;">Обязанности:</p>
+                            <ul class="tab-duties">
+                                <li>Разработка Gameplay логики</li>
+                                <li>Настройка освещения и графики</li>
+                                <li>Создание VFX</li>
+                                <li>Создание Shader</li>
+                                <li>Настройка рендеринга</li>
+                                <li>Написание и настройка анимаций</li>
+                                <li>Формализация и алгоритмизация поставленных задач</li>
+                                <li>Реализация функциональности и логики программы в соответствии с ТЗ</li>
+                                <li>Рефакторинг программного кода</li>
+                                <li>Написание автоматических тестов</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section reveal">
+                <p class="section-label" style="margin-top: 4rem; margin-bottom: 1.5rem;">Образование</p>
+                
+                <div class="tab-companies">
+                    <button class="tab-company-btn" data-tab="sirius-edu" style="--accent: #0db1aa;" onclick="switchTab('sirius-edu', this)">
+                        <img src="assets/images/logo/education/sirius_logo.svg" alt="Сириус" class="tab-company-logo" onerror="this.style.display='none'">
+                    </button>
+                    <button class="tab-company-btn active" data-tab="spbgut-edu" style="--accent: #f68b1e;" onclick="switchTab('spbgut-edu', this)">
+                        <img src="assets/images/logo/education/spbgut_logo.svg" alt="СПбГУТ" class="tab-company-logo" onerror="this.style.display='none'">
+                    </button>
+                </div>
+
+                <div class="tab-details">
+                    <div class="tab-detail" data-tab="sirius-edu" style="--accent: #0db1aa;">
+                        <div class="tab-inner">
+                            <div class="tab-header">
+                                <img src="assets/images/logo/education/sirius_logo.svg" alt="Сириус" class="tab-header-logo" onerror="this.style.display='none'">
+                                <div>
+                                    <h3 class="tab-company-name">АНО ВО «Университет Сириус»</h3>
+                                    <p class="tab-company-subname">Колледж</p>
+                                </div>
+                            </div>
+                            <p class="tab-role">Системный администратор</p>
+                            <p>2022 — 2025 · Среднее профессиональное образование (СПО)</p>
+                        </div>
+                    </div>
+                    <div class="tab-detail active" data-tab="spbgut-edu" style="--accent: #f68b1e;">
+                        <div class="tab-inner">
+                            <div class="tab-header">
+                                <img src="assets/images/logo/education/spbgut_logo.svg" alt="СПбГУТ" class="tab-header-logo" onerror="this.style.display='none'">
+                                <div>
+                                    <h3 class="tab-company-name">Санкт-Петербургский государственный университет телекоммуникаций имени проф. М.А. Бонч-Бруевича</h3>
+                                    <p class="tab-company-subname">СПбГУТ, Санкт-Петербург</p>
+                                </div>
+                            </div>
+                            <p class="tab-role">Программная инженерия (Разработка программного обеспечения и приложений искусственного интеллекта в киберфизических системах)</p>
+                            <p>2025 — 2030 · Бакалавр</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <p class="section-label reveal">Контакты</p>
+            <h2 class="section-heading reveal delay-1">Давайте поработаем вместе</h2>
+            <a href="mailto:dmitrichenkov.dima@mail.ru" class="contact-email reveal delay-3">dmitrichenkov.dima@mail.ru</a>
+            <div class="social-links reveal delay-4">
+                <a href="https://vk.com/id733936971" target="_blank" rel="noopener noreferrer">VK</a>
+                <a href="https://github.com/3D23" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://t.me/Dimasik2323" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 3D23. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
